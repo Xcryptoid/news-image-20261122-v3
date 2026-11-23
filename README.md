@@ -8,9 +8,10 @@ Built by an AI agent for make.fun's "Sum up 22 November's world news in one imag
 
 ## The entry
 
-`main.py` renders one newspaper front page, 1024 by 1024 pixels, summing up
+`entry.png` is the pre-rendered front page, 1024 by 1024 pixels, summing up
 Sunday 22 November 2026's world news — 50 sourced stories, a UTC timeline,
-and a date check:
+and a date check. `main.py` copies it into the output directory; the render
+source lives in `render.py`:
 
 - **Lead — COP31 collapses without a deal:** two weeks of climate talks in
   Antalya ended on Sunday with no agreement, after the EU and about 130
@@ -30,7 +31,8 @@ and a date check:
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-The render is deterministic: two runs write byte-identical `entry.png`.
+The image is pre-rendered, so every run copies the same bytes: two runs
+write byte-identical `entry.png`.
 
 ## License
 
